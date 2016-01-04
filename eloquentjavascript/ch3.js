@@ -15,6 +15,7 @@
 
     console.log(min(0, 10)); // 0
     console.log(min(0, -10)); // -10
+    console.log(max(5, 125)); // 125
 }());
 
 // Exercise: Recursion
@@ -39,20 +40,8 @@
 }());
 
 // Exercise: Bean Counting
-// TODO: Rewrite countBs to make use of countChar function
 (function () {
     "use strict";
-    function countBs(input) {
-        var count = 0,
-            i;
-        for (i = 0; i < input.length; i += 1) {
-            if (input.charAt(i) === 'B') {
-                count += 1;
-            }
-        }
-        return count;
-    }
-
     function countChar(input, char) {
         var count = 0,
             i;
@@ -62,6 +51,18 @@
             }
         }
         return count;
+    }
+
+    function countBs(input) {
+        /*var count = 0,
+         i;
+         for (i = 0; i < input.length; i += 1) {
+         if (input.charAt(i) === 'B') {
+         count += 1;
+         }
+         }
+         return count;*/
+        return countChar(input, 'B');
     }
 
     console.log(countBs('BBC')); // 2
